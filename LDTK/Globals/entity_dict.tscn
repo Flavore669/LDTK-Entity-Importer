@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://baavyrobkhadh"]
+
+[ext_resource type="Script" uid="uid://17k3vugsg1go" path="res://Misc/LDTK/Globals/entity_dict.gd" id="1_47ml7"]
+
+[node name="EntityDict" type="Node"]
+script = ExtResource("1_47ml7")
