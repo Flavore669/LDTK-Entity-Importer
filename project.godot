@@ -14,6 +14,14 @@ config/name="LDTK Entity Importer"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EntityDict="*res://ldtk-entity-configure/globals/entity_dict.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ldtk-importer/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
