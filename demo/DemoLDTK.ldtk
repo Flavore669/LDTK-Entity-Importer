@@ -887,7 +887,7 @@
 			"__cHei": 18,
 			"identifier": "Spritesheet_tiles_default",
 			"uid": 1,
-			"relPath": "Assets/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-tiles-default.png",
+			"relPath": "assets/Tilesets/spritesheet-tiles-default.png",
 			"embedAtlas": null,
 			"pxWid": 1152,
 			"pxHei": 1152,
@@ -1020,6 +1020,47 @@
 							],
 							"__worldX": 680,
 							"__worldY": 840
+						},
+						{
+							"__identifier": "Sawblade",
+							"__grid": [55,52],
+							"__pivot": [0.5,0.5],
+							"__tags": [],
+							"__tile": { "tilesetUid": 1, "x": 640, "y": 896, "w": 64, "h": 64 },
+							"__smartColor": "#D77643",
+							"iid": "bf32ecf0-5e50-11f0-80f1-630b18d7db5b",
+							"width": 64,
+							"height": 64,
+							"defUid": 48,
+							"px": [888,840],
+							"fieldInstances": [
+								{ "__identifier": "Speed", "__type": "Float", "__value": 80, "__tile": null, "defUid": 51, "realEditorValues": [{ "id": "V_Float", "params": [80] }] },
+								{ "__identifier": "end_point", "__type": "Point", "__value": { "cx": 55, "cy": 36 }, "__tile": null, "defUid": 59, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["55,36"]
+								}] }
+							],
+							"__worldX": 888,
+							"__worldY": 840
+						},
+						{
+							"__identifier": "Sawblade",
+							"__grid": [62,52],
+							"__pivot": [0.5,0.5],
+							"__tags": [],
+							"__tile": { "tilesetUid": 1, "x": 640, "y": 896, "w": 64, "h": 64 },
+							"__smartColor": "#D77643",
+							"iid": "c035de00-5e50-11f0-80f1-713b1bb3197b",
+							"width": 64,
+							"height": 64,
+							"defUid": 48,
+							"px": [1000,840],
+							"fieldInstances": [
+								{ "__identifier": "Speed", "__type": "Float", "__value": 0, "__tile": null, "defUid": 51, "realEditorValues": [] },
+								{ "__identifier": "end_point", "__type": "Point", "__value": null, "__tile": null, "defUid": 59, "realEditorValues": [] }
+							],
+							"__worldX": 1000,
+							"__worldY": 840
 						}
 					]
 				},
@@ -1033,7 +1074,7 @@
 					"__pxTotalOffsetX": 0,
 					"__pxTotalOffsetY": 0,
 					"__tilesetDefUid": 1,
-					"__tilesetRelPath": "Assets/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-tiles-default.png",
+					"__tilesetRelPath": "assets/Tilesets/spritesheet-tiles-default.png",
 					"iid": "250990b0-5e50-11f0-9896-af286a097904",
 					"levelId": 0,
 					"layerDefUid": 2,

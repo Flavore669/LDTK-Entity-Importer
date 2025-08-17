@@ -52,7 +52,7 @@ func _process_entity(entity: Dictionary) -> void:
 	var scene : PackedScene = scene_mappings[identifier]
 	
 	if not scene:
-		push_warning("Missing scene mapping for: ", identifier)
+		print("Missing scene mapping for: ", identifier)
 		return
 	
 	var instance : Node = scene.instantiate()
@@ -86,10 +86,16 @@ func _auto_configure_node(node: Node, fields: Dictionary) -> void:
 	for field_name in fields:
 		var property_name = field_name.to_lower()
 		if not property_name in property_info:
+			print("Property '%s' not found on node '%s'" % [property_name, node.name])
 			continue
 			
 		var value = fields[field_name]
 		var prop_info = property_info[property_name]
+		
+		# Skip if value is null (unless the property explicitly allows null)
+		if value == null:
+			print("Value for property '%s' is null, skipping" % property_name)
+			continue
 		
 		# Handle enum properties
 		if _is_enum_property(prop_info):
@@ -100,9 +106,22 @@ func _auto_configure_node(node: Node, fields: Dictionary) -> void:
 			var ref_node = get_entity_by_iid(value)
 			if ref_node:
 				value = node.get_path_to(ref_node)
+			else:
+				print("Failed to resolve reference for NodePath property '%s'" % property_name)
+				continue
 		
-		# Set the property
+		# Handle Vector2 specifically
+		elif prop_info["type"] == TYPE_VECTOR2:
+			if typeof(value) != TYPE_ARRAY and typeof(value) != TYPE_VECTOR2:
+				print("Invalid Vector2 value for property '%s'" % property_name)
+				continue
+			if typeof(value) == TYPE_ARRAY and value.size() == 2:
+				value = Vector2(value[0], value[1])
+		
+		print("Setting property %s (type %s) to %s" % [property_name, prop_info["type"], value])
+		
 		node.set(property_name, value)
+		
 
 func _is_enum_property(prop_info: Dictionary) -> bool:
 	# Check if property is an enum (either has enum hint or is integer with custom setter)

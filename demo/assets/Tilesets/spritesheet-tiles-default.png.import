@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i127rtds8of4"
-path="res://.godot/imported/bomb.png-4ff83a7916d96ef80b092b384f4d66bc.ctex"
+uid="uid://cltxtpv87byki"
+path="res://.godot/imported/spritesheet-tiles-default.png-c36cc58e72ef9aaddae079744e61b32f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://demo/assets/kenney_new-platformer-pack-1.0/Sprites/Tiles/Default/bomb.png"
-dest_files=["res://.godot/imported/bomb.png-4ff83a7916d96ef80b092b384f4d66bc.ctex"]
+source_file="res://demo/assets/Tilesets/spritesheet-tiles-default.png"
+dest_files=["res://.godot/imported/spritesheet-tiles-default.png-c36cc58e72ef9aaddae079744e61b32f.ctex"]
 
 [params]
 

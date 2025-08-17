@@ -1,33 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxuxg0jxvyg0u"]
+[gd_scene load_steps=8 format=3 uid="uid://cxuxg0jxvyg0u"]
 
 [ext_resource type="PackedScene" uid="uid://d24lhves6lh8l" path="res://demo/levels/Level_0.scn" id="1_vdsbh"]
 [ext_resource type="Script" uid="uid://db17cja2vo1ml" path="res://demo/demo-level/level_0.gd" id="2_s8tp5"]
 [ext_resource type="PackedScene" uid="uid://3iqotex11ni1" path="res://demo/entities/Bomb/bomb.tscn" id="3_4gy2n"]
-[ext_resource type="PackedScene" uid="uid://c188vjnnuwqpe" path="res://demo/entities/Sawblade/sawblade.tscn" id="4_gf7tf"]
+[ext_resource type="Script" uid="uid://dxb7inlgtmc4h" path="res://ldtk-entity-configure/entity_importer.gd" id="3_i1w8a"]
 [ext_resource type="Script" uid="uid://dke5q155s6s7e" path="res://demo/entities/Bomb/bomb.gd" id="4_i1w8a"]
+[ext_resource type="PackedScene" uid="uid://c188vjnnuwqpe" path="res://demo/entities/Sawblade/sawblade.tscn" id="5_gf7tf"]
+[ext_resource type="Script" uid="uid://t5ovikaak2ug" path="res://demo/entities/Sawblade/sawblade.gd" id="6_681tf"]
 
 [node name="Level_0" instance=ExtResource("1_vdsbh")]
 script = ExtResource("2_s8tp5")
 
-[node name="EntityImporter" parent="." index="2"]
+[node name="EntityImporter" type="Node2D" parent="." index="2" node_paths=PackedStringArray("entity_layer")]
+script = ExtResource("3_i1w8a")
+entity_layer = NodePath("../Entities")
 scene_mappings = Dictionary[String, PackedScene]({
 "Bomb": ExtResource("3_4gy2n"),
-"Sawblade": ExtResource("4_gf7tf")
+"Sawblade": ExtResource("5_gf7tf")
 })
+metadata/_custom_type_script = "uid://dxb7inlgtmc4h"
 
-[node name="Bomb4" type="Node2D" parent="EntityImporter" index="0" instance=ExtResource("3_4gy2n")]
+[node name="Bomb" type="Node2D" parent="EntityImporter" index="0" instance=ExtResource("3_4gy2n")]
 position = Vector2(360, 840)
 script = ExtResource("4_i1w8a")
 damage_type = 1
 damage_amount = 0
 
-[node name="Bomb5" type="Node2D" parent="EntityImporter" index="1" instance=ExtResource("3_4gy2n")]
+[node name="Bomb2" type="Node2D" parent="EntityImporter" index="1" instance=ExtResource("3_4gy2n")]
 position = Vector2(520, 840)
 script = ExtResource("4_i1w8a")
 damage_type = 2
 damage_amount = 5
 
-[node name="Bomb6" type="Node2D" parent="EntityImporter" index="2" instance=ExtResource("3_4gy2n")]
+[node name="Bomb3" type="Node2D" parent="EntityImporter" index="2" instance=ExtResource("3_4gy2n")]
 position = Vector2(680, 840)
 script = ExtResource("4_i1w8a")
 damage_amount = 10
+
+[node name="Sawblade" type="Node2D" parent="EntityImporter" index="3" instance=ExtResource("5_gf7tf")]
+position = Vector2(888, 840)
+script = ExtResource("6_681tf")
+
+[node name="Sawblade2" type="Node2D" parent="EntityImporter" index="4" instance=ExtResource("5_gf7tf")]
+position = Vector2(1000, 840)
+script = ExtResource("6_681tf")
+speed = 0.0

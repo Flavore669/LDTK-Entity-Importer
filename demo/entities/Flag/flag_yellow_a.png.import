@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drpdmfvngfrsv"
-path="res://.godot/imported/coin_gold.png-dddb4b23fd026ba87068a52663f2aa69.ctex"
+uid="uid://cicpg866stkjg"
+path="res://.godot/imported/flag_yellow_a.png-f21809d474872bec1411a770bfa7fbde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://demo/assets/kenney_new-platformer-pack-1.0/Sprites/Tiles/Default/coin_gold.png"
-dest_files=["res://.godot/imported/coin_gold.png-dddb4b23fd026ba87068a52663f2aa69.ctex"]
+source_file="res://demo/entities/Flag/flag_yellow_a.png"
+dest_files=["res://.godot/imported/flag_yellow_a.png-f21809d474872bec1411a770bfa7fbde.ctex"]
 
 [params]
 

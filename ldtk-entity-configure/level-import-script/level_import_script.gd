@@ -6,6 +6,7 @@ func post_import(level: LDTKLevel) -> LDTKLevel:
 	entity_importer.name = "EntityImporter"
 	var entity_layer : LDTKEntityLayer = level.get_node_or_null("Entities")
 	
+	# Instead of calling import while it's not intialized. Create a toggle to import at runtime and set it here
 	if entity_layer:
 		entity_importer.entity_layer = entity_layer
 	else:

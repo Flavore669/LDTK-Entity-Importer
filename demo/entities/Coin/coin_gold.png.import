@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5oxjoxiuwmt0"
-path="res://.godot/imported/saw_a.png-dd0b12380ae15b0a81f767ab4828128e.ctex"
+uid="uid://drpdmfvngfrsv"
+path="res://.godot/imported/coin_gold.png-57b7e1977c0ceadbd1d99e17293fffaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://demo/assets/kenney_new-platformer-pack-1.0/Sprites/Enemies/Default/saw_a.png"
-dest_files=["res://.godot/imported/saw_a.png-dd0b12380ae15b0a81f767ab4828128e.ctex"]
+source_file="res://demo/entities/Coin/coin_gold.png"
+dest_files=["res://.godot/imported/coin_gold.png-57b7e1977c0ceadbd1d99e17293fffaa.ctex"]
 
 [params]
 

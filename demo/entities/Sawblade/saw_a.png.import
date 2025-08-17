@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cicpg866stkjg"
-path="res://.godot/imported/flag_yellow_a.png-52d2e76018fc666228abb3896685753d.ctex"
+uid="uid://c5oxjoxiuwmt0"
+path="res://.godot/imported/saw_a.png-193b6d836b1fbe4d15642953199bd21e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://demo/assets/kenney_new-platformer-pack-1.0/Sprites/Tiles/Default/flag_yellow_a.png"
-dest_files=["res://.godot/imported/flag_yellow_a.png-52d2e76018fc666228abb3896685753d.ctex"]
+source_file="res://demo/entities/Sawblade/saw_a.png"
+dest_files=["res://.godot/imported/saw_a.png-193b6d836b1fbe4d15642953199bd21e.ctex"]
 
 [params]
 
