@@ -5,15 +5,12 @@ class_name EntityImporter
 
 # Configuration
 @export var entity_layer: LDTKEntityLayer: set = _set_entity_layer
-@export var scene_mappings: Dictionary[String, PackedScene] = EntityDict.scene_mappings #ldtk_name: PackedScene
-@export var debug : bool = false
+@export var entity_dict : EntityDictionary#:
+@export var troubleshoot : bool = false
 
 # Runtime
+var scene_mappings: Dictionary # Scene Mappings from entity_dict, set in import
 var _instance_references: Dictionary = {}	# iid -> Node
-
-func _ready() -> void:
-	if Engine.is_editor_hint():
-		scene_mappings = EntityDict.scene_mappings
 
 func _set_entity_layer(value: LDTKEntityLayer) -> void:
 	entity_layer = value
@@ -22,6 +19,8 @@ func _set_entity_layer(value: LDTKEntityLayer) -> void:
 		pass
 
 func import(entity_layer: LDTKEntityLayer) -> LDTKEntityLayer:
+	scene_mappings = entity_dict.scene_mappings
+	
 	_clear_import_data()
 	
 	# First pass: Create all instances
@@ -95,7 +94,7 @@ func _auto_configure_node(node: Node, fields: Dictionary) -> void:
 		
 		# Skip if value is null (unless the property explicitly allows null)
 		if value == null:
-			print("Value for property '%s' is null, skipping" % property_name)
+			if troubleshoot: print("Value for property '%s' is null, skipping" % property_name)
 			continue
 		
 		# Handle enum properties
@@ -127,7 +126,7 @@ func _auto_configure_node(node: Node, fields: Dictionary) -> void:
 						continue
 				value = corrected_array
 		
-		print("Setting property %s (type %s) on %s to %s" % [property_name, prop_info["type"], node.name, value])
+		if troubleshoot: print("Setting property %s (type %s) on %s to %s" % [property_name, prop_info["type"], node.name, value])
 		
 		node.set(property_name, value)
 		

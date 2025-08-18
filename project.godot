@@ -15,10 +15,6 @@ run/main_scene="uid://cxuxg0jxvyg0u"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-EntityDict="*res://ldtk-entity-configure/globals/entity_dict.tscn"
-
 [display]
 
 window/size/viewport_width=1024
