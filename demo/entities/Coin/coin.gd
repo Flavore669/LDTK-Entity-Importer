@@ -1,7 +1,7 @@
 extends Node2D
 
-var is_collected = false
-var reward_text : String = ""
+@export var is_collected = false
+@export var reward_text : String = ""
 
 @onready var label: Label = $Label
 

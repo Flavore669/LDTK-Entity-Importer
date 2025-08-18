@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://baavyrobkhadh"]
+[gd_scene load_steps=6 format=3 uid="uid://baavyrobkhadh"]
 
 [ext_resource type="Script" uid="uid://17k3vugsg1go" path="res://ldtk-entity-configure/globals/entity_dict.gd" id="1_47ml7"]
 [ext_resource type="PackedScene" uid="uid://3iqotex11ni1" path="res://demo/entities/Bomb/bomb.tscn" id="2_87lt6"]
 [ext_resource type="PackedScene" uid="uid://c188vjnnuwqpe" path="res://demo/entities/Sawblade/sawblade.tscn" id="3_d8dgt"]
+[ext_resource type="PackedScene" uid="uid://pq5c2t3fgqtt" path="res://demo/entities/Coin/coin.tscn" id="4_y4n7x"]
+[ext_resource type="PackedScene" uid="uid://w650dba0f3kp" path="res://demo/entities/Flag/flag.tscn" id="5_knubb"]
 
 [node name="EntityDict" type="Node"]
 script = ExtResource("1_47ml7")
 scene_mappings = Dictionary[String, PackedScene]({
 "Bomb": ExtResource("2_87lt6"),
+"Coin": ExtResource("4_y4n7x"),
+"FinishFlag": ExtResource("5_knubb"),
 "Sawblade": ExtResource("3_d8dgt")
 })

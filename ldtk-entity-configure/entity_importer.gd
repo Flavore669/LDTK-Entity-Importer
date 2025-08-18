@@ -6,12 +6,13 @@ class_name EntityImporter
 # Configuration
 @export var entity_layer: LDTKEntityLayer: set = _set_entity_layer
 @export var scene_mappings: Dictionary[String, PackedScene] = EntityDict.scene_mappings #ldtk_name: PackedScene
+@export var debug : bool = false
 
 # Runtime
 var _instance_references: Dictionary = {}	# iid -> Node
 
 func _ready() -> void:
-	if scene_mappings != EntityDict.scene_mappings and Engine.is_editor_hint():
+	if Engine.is_editor_hint():
 		scene_mappings = EntityDict.scene_mappings
 
 func _set_entity_layer(value: LDTKEntityLayer) -> void:
@@ -112,13 +113,26 @@ func _auto_configure_node(node: Node, fields: Dictionary) -> void:
 		
 		# Handle Vector2 specifically
 		elif prop_info["type"] == TYPE_VECTOR2:
-			if typeof(value) != TYPE_ARRAY and typeof(value) != TYPE_VECTOR2:
-				print("Invalid Vector2 value for property '%s'" % property_name)
-				continue
-			if typeof(value) == TYPE_ARRAY and value.size() == 2:
-				value = Vector2(value[0], value[1])
+			value = Vector2(value[0], value[1])
 		
-		print("Setting property %s (type %s) to %s" % [property_name, prop_info["type"], value])
+		elif prop_info["type"] == TYPE_ARRAY:
+			print(typeof(value[0]))
+			print(value[0] in _instance_references.keys())
+			
+			if value[0] in _instance_references.keys():
+				print("RAN")
+				var corrected_array = []
+				for v in value:
+					var ref_node = get_entity_by_iid(v)
+					if ref_node:
+						corrected_array.append(node.get_path_to(ref_node))
+					else:
+						print("Failed to resolve reference for NodePath property '%s'" % property_name)
+						continue
+				print(corrected_array)
+				value = corrected_array
+		
+		print("Setting property %s (type %s) on %s to %s" % [property_name, prop_info["type"], node.name, value])
 		
 		node.set(property_name, value)
 		
