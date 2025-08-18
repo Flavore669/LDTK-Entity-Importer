@@ -953,7 +953,7 @@
 					"tilesetUid": null
 				},
 				{
-					"identifier": "String",
+					"identifier": "Strings",
 					"doc": null,
 					"__type": "Array<String>",
 					"uid": 69,
@@ -990,7 +990,7 @@
 					"tilesetUid": null
 				},
 				{
-					"identifier": "Point",
+					"identifier": "Points",
 					"doc": null,
 					"__type": "Array<Point>",
 					"uid": 70,
@@ -1299,14 +1299,14 @@
 							"px": [512,464],
 							"fieldInstances": [
 								{ "__identifier": "Nums", "__type": "Array<Int>", "__value": [3,2], "__tile": null, "defUid": 65, "realEditorValues": [ { "id": "V_Int", "params": [3] }, { "id": "V_Int", "params": [2] } ] },
-								{ "__identifier": "String", "__type": "Array<String>", "__value": [ "hello", "there" ], "__tile": null, "defUid": 69, "realEditorValues": [ {
+								{ "__identifier": "Strings", "__type": "Array<String>", "__value": [ "hello", "there" ], "__tile": null, "defUid": 69, "realEditorValues": [ {
 									"id": "V_String",
 									"params": ["hello"]
 								}, {
 									"id": "V_String",
 									"params": ["there"]
 								} ] },
-								{ "__identifier": "Point", "__type": "Array<Point>", "__value": [ { "cx": 51, "cy": 26 }, { "cx": 24, "cy": 20 } ], "__tile": null, "defUid": 70, "realEditorValues": [ {
+								{ "__identifier": "Points", "__type": "Array<Point>", "__value": [ { "cx": 51, "cy": 26 }, { "cx": 24, "cy": 20 } ], "__tile": null, "defUid": 70, "realEditorValues": [ {
 									"id": "V_String",
 									"params": ["51,26"]
 								}, {

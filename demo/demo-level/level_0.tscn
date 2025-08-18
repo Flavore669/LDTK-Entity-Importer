@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cxuxg0jxvyg0u"]
+[gd_scene load_steps=14 format=3 uid="uid://cxuxg0jxvyg0u"]
 
 [ext_resource type="PackedScene" uid="uid://d24lhves6lh8l" path="res://demo/levels/Level_0.scn" id="1_vdsbh"]
 [ext_resource type="Script" uid="uid://db17cja2vo1ml" path="res://demo/demo-level/level_0.gd" id="2_s8tp5"]
@@ -9,8 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://c188vjnnuwqpe" path="res://demo/entities/Sawblade/sawblade.tscn" id="5_gf7tf"]
 [ext_resource type="Script" uid="uid://t5ovikaak2ug" path="res://demo/entities/Sawblade/sawblade.gd" id="6_681tf"]
 [ext_resource type="PackedScene" uid="uid://w650dba0f3kp" path="res://demo/entities/Flag/flag.tscn" id="6_soakp"]
+[ext_resource type="PackedScene" uid="uid://b1lnutbf7uaj6" path="res://demo/entities/array_tests.tscn" id="8_411o3"]
 [ext_resource type="Script" uid="uid://dvsnya8o20jes" path="res://demo/entities/Coin/coin.gd" id="9_51piy"]
 [ext_resource type="Script" uid="uid://d314d4s418bo6" path="res://demo/entities/Flag/flag.gd" id="10_411o3"]
+[ext_resource type="Script" uid="uid://452e1n4045nx" path="res://demo/entities/array_tests.gd" id="13_k7ltc"]
 
 [node name="Level_0" instance=ExtResource("1_vdsbh")]
 script = ExtResource("2_s8tp5")
@@ -19,12 +21,12 @@ script = ExtResource("2_s8tp5")
 script = ExtResource("3_i1w8a")
 entity_layer = NodePath("../Entities")
 scene_mappings = Dictionary[String, PackedScene]({
+"ArrayTests": ExtResource("8_411o3"),
 "Bomb": ExtResource("4_681tf"),
 "Coin": ExtResource("5_4duma"),
 "FinishFlag": ExtResource("6_soakp"),
 "Sawblade": ExtResource("5_gf7tf")
 })
-debug_print = null
 metadata/_custom_type_script = "uid://dxb7inlgtmc4h"
 
 [node name="Bomb" type="Node2D" parent="EntityImporter" index="0" instance=ExtResource("4_681tf")]
@@ -68,6 +70,13 @@ reward_text = "whoa"
 [node name="Coin2" type="Node2D" parent="EntityImporter" index="7" instance=ExtResource("5_4duma")]
 position = Vector2(1288, 680)
 script = ExtResource("9_51piy")
+
+[node name="ArrayTests" type="Node2D" parent="EntityImporter" index="8" instance=ExtResource("8_411o3")]
+position = Vector2(512, 464)
+script = ExtResource("13_k7ltc")
+nums = [3.0, 2.0]
+strings = ["hello", "there"]
+points = [Vector2i(51, 26), Vector2i(24, 20)]
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 position = Vector2(1024, 512)

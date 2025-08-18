@@ -116,11 +116,7 @@ func _auto_configure_node(node: Node, fields: Dictionary) -> void:
 			value = Vector2(value[0], value[1])
 		
 		elif prop_info["type"] == TYPE_ARRAY:
-			print(typeof(value[0]))
-			print(value[0] in _instance_references.keys())
-			
 			if value[0] in _instance_references.keys():
-				print("RAN")
 				var corrected_array = []
 				for v in value:
 					var ref_node = get_entity_by_iid(v)
@@ -129,7 +125,6 @@ func _auto_configure_node(node: Node, fields: Dictionary) -> void:
 					else:
 						print("Failed to resolve reference for NodePath property '%s'" % property_name)
 						continue
-				print(corrected_array)
 				value = corrected_array
 		
 		print("Setting property %s (type %s) on %s to %s" % [property_name, prop_info["type"], node.name, value])
