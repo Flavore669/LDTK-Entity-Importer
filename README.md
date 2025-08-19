@@ -26,14 +26,13 @@ Map your LDTK entities to Godot scenes in `EntityDict.tscn` using the format:
 
 ### Import Methods
 
-**Automatic Mode** *(Simplest workflow)*  
-✅ Zero configuration required  
-✅ Automatic scene instantiation and configuration  
-❌ Limited in-editor adjustments
+**Automatic Mode** (Simplest Workflow)
+*   **Pros:** Scenes are instantly imported and placed within your levels.
+*   **Cons:** Limited ability to adjust them in the editor due to scene inheritance.
 
-**Manual Mode** *(Maximum control / Fast Prototyping)*  
-✅ Full control over placement and properties  
-✅ Easier level fine-tuning and customization
+**Manual Mode** (Maximum Control)
+*   **Pros:** Grants full control over placement, properties, and fine-tuning.
+*   **Cons:** Requires manual placement of each `EntityImporter` node instance.
 
 ### Automatic Setup
 
