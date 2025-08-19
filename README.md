@@ -54,7 +54,6 @@ func post_import(level: LDTKLevel) -> LDTKLevel:
     
     if entity_layer:
         entity_importer.entity_dict = ENTITY_DICT
-        entity_importer.entity_layer = entity_layer
         entity_importer.import(entity_layer)
     else:
         print("Error: No Entity Layer Found in Scene Tree")
