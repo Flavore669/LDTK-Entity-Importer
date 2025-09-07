@@ -1,4 +1,4 @@
-# Flexible LDTK Entity Post-Importer (Godot Plugin)
+# Flexible LDTK Entity Post-Importer
 
 Enhances [LDTK Importer](https://github.com/heygleeson/godot-ldtk-importer) functionality with better entity processing.
 
@@ -8,12 +8,6 @@ Enhances [LDTK Importer](https://github.com/heygleeson/godot-ldtk-importer) func
 - **Runtime Configuration**: Applies LDTK field values to entity properties
 - **Multi-Type Support**: Handles various data types
 - **Debug Tools**: Troubleshooting mode included
-
-## Installation
-
-1. Download the latest release from the `releases` tab
-2. Extract the contents into your `res://addons/` directory
-3. Enable the plugin in Godot's `Project → Plugins` tab
 
 ## Usage
 
